@@ -2,7 +2,7 @@
 # http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv
 # https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json
 url <- "http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv"
-result <- read_csv(url)
+result <- readr::read_csv(url)
 # str(t)
 # colnames(t)
 data_time <- max(result$來源資料時間)

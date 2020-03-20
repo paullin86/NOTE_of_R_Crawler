@@ -2,13 +2,23 @@
 # JSON https://data.gov.tw/dataset/118039
 url <- "https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json"
 library(jsonlite)
-result <- fromJSON(url)
+t <- fromJSON(url)
+library(readr)
+result <- read_csv("data/CDC_19CoV_20200320_105658_Big5.csv", 
+                                           locale = locale(encoding = "BIG5"))
+# View(result)
+library(data.table)
+result.dt <- data.table(result)
+t.dt <- data.table(t)
+# dplyr::anti_join(t,result)
+t.dt[!result.dt,]
+# result <-t
 # data_time <- max(result$inc_notify_time)
 time <- Sys.time()
 time <- gsub("[^0-9]",replacement="",time) 
 time <- paste0(substr(time,start=1,stop=8),"_",substr(time,start=9,stop=16))
 result$'確定病例數' <- as.integer(result$'確定病例數')
-library(data.table)
+
 result.dt<-data.table(result)
 class(result.dt)
 str(result.dt)
