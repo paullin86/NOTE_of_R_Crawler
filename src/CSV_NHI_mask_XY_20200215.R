@@ -5,11 +5,11 @@ url <- "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.js
 library(jsonlite)
 t <- fromJSON(url)
 str(t$features$geometry$coordinates[1])
+nrow(t$features)
 
-
-library(tidyverse)
+library(dplyr)
 t2 <- unlist(t$features$geometry$coordinates) %>% 
-  matrix(nrow=6864, ncol=2,byrow = TRUE) %>% as.data.frame() 
+  matrix(nrow=nrow(t$features), ncol=2,byrow = TRUE) %>% as.data.frame() 
 colnames(t2)=c("lon","lat")
 result <- cbind(t$features$properties,t2)
 # remove(result)
