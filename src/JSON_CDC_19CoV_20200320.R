@@ -1,6 +1,7 @@
 # JSON https://data.gov.tw/dataset/118038
 # JSON https://data.gov.tw/dataset/118039
 url <- "https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json"
+# url <- "https://od.cdc.gov.tw/eic/Age_County_Gender_19Cov.json"
 library(jsonlite)
 t <- fromJSON(url)
 library(readr)
@@ -12,10 +13,13 @@ result_ori <- read_csv("data/CDC_19CoV_temp_Big5.csv",
 library(data.table)
 result_ori.dt <- data.table(result_ori)
 t.dt <- data.table(t)
+t.dt$'確定病例數' <- as.integer(t.dt$'確定病例數')
+t.dt[,.(Sum_ALL=sum(確定病例數)),]
+# -------------
 str(result_ori.dt);str(t.dt)
 t2 <- t.dt[!result_ori.dt, on = names(t.dt)]
-# result <-t
-# data_time <- max(result$inc_notify_time)
+
+# 
 time <- Sys.time()
 time <- gsub("[^0-9]",replacement="",time) 
 time <- paste0(substr(time,start=1,stop=8),"_",substr(time,start=9,stop=16))
@@ -40,6 +44,5 @@ savef <- function(time){
   write.csv(t2,paste0("./data/CDC_19CoV_diff_",time,"_Big5",".csv"),row.names = FALSE)
 }
 
-ifelse(nrow(t2)>0,savef(time),
-print("not yet updated"))
+ifelse(nrow(t2)>0,savef(time),"not yet updated")
 
