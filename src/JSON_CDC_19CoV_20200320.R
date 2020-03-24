@@ -13,6 +13,7 @@ result_ori <- read_csv("data/CDC_19CoV_temp_Big5.csv",
 library(data.table)
 result_ori.dt <- data.table(result_ori)
 t.dt <- data.table(t)
+result_ori.dt$'確定病例數' <- as.integer(result_ori.dt$'確定病例數')
 t.dt$'確定病例數' <- as.integer(t.dt$'確定病例數')
 t.dt[,.(Sum_ALL=sum(確定病例數)),]
 # -------------
