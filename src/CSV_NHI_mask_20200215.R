@@ -19,6 +19,6 @@ time <- paste0(substr(time,start=1,stop=4),"-",
                substr(time,start=5,stop=6),"-",
                substr(time,start=7,stop=8),"-",
                substr(time,start=9,stop=16))
-setwd("~/R/mask")
+# setwd("~/R/mask")
 write.csv(result,paste0("./data/maskdata_",time,".csv"),row.names = FALSE)
 
