@@ -19,7 +19,7 @@ t.dt[,.(Sum_ALL=sum(確定病例數)),]
 # -------------
 str(result_ori.dt);str(t.dt)
 t2 <- t.dt[!result_ori.dt, on = names(t.dt)]
-
+# names(result_ori.dt)<- names(t.dt)
 # 
 time <- Sys.time()
 time <- gsub("[^0-9]",replacement="",time) 
@@ -43,7 +43,7 @@ savef <- function(time){
   write.csv(result,paste0("./data/CDC_19CoV_",time,"_Big5",".csv"),row.names = FALSE);
   write.csv(result,paste0("./data/CDC_19CoV_","temp","_Big5",".csv"),row.names = FALSE);
   write.csv(result_op.dt,paste0("./data/CDC_19CoV_County_",time,"_Big5",".csv"),row.names = FALSE);
-  write.csv(t2,paste0("./data/CDC_19CoV_diff_",time,"_Big5",".csv"),row.names = FALSE);
+   write.csv(t2,paste0("./data/CDC_19CoV_diff_",time,"_Big5",".csv"),row.names = FALSE);
   print(paste0(paste(result_op.dt$縣市, collapse="、"),"等",length(result_op.dt$縣市),"縣市，共",t.dt[,.(Sum_ALL=sum(確定病例數)),],"例。"))
 }
 
