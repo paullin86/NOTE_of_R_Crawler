@@ -6,8 +6,8 @@ library(jsonlite)
 t <- fromJSON(url)
 library(readr)
 result_ori <- read_csv("data/CDC_19CoV_temp_Big5.csv", 
-                   col_types = cols("診斷年份" = col_character(), 
-                                    "診斷週別" = col_character(), 
+                   col_types = cols("發病年份" = col_character(), 
+                                    "發病週別" = col_character(), 
                                     "確定病例數" = col_character()),
                    locale = locale(encoding = "BIG5"))# View(result)
 library(data.table)
@@ -50,4 +50,3 @@ savef <- function(time){
 if(nrow(t2)>0){
   savef(time)}else{
     print("not yet updated")}
-
