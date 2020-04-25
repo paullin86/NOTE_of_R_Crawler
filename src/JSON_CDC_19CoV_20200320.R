@@ -17,7 +17,7 @@ result_ori.dt$'確定病例數' <- as.integer(result_ori.dt$'確定病例數')
 t.dt$'確定病例數' <- as.integer(t.dt$'確定病例數')
 t.dt[,.(Sum_ALL=sum(確定病例數)),]
 # -------------
-str(result_ori.dt);str(t.dt)
+# str(result_ori.dt);str(t.dt)
 t2 <- t.dt[!result_ori.dt, on = names(t.dt)]
 # names(result_ori.dt)<- names(t.dt)
 # 
