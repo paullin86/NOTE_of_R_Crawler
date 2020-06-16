@@ -3,7 +3,7 @@ url <- "https://data.cdc.gov.tw/download?resourceid=a59483fd-4b09-42bd-af15-3c12
 library(jsonlite)
 t <- fromJSON(url)
 library(readr)
-result_ori <- read_csv("data/CDC_19CoV_temp_Big5.csv", 
+result_ori <- read_csv("data/CDC_19CoV_day_temp_Big5.csv", 
                        col_types = cols(.default = col_character()), 
                        locale = locale(encoding = "BIG5"))# View(result)
 library(data.table)
@@ -18,7 +18,7 @@ t.dt[,.(Sum_ALL=sum(確定病例數)),]  # result_ori.dt[,.(Sum_ALL=sum(確定�
 t2 <- t.dt[!result_ori.dt, on = names(t.dt)]
 t3 <- result_ori.dt[!t.dt, on = names(result_ori.dt)]
 # t_diff <- merge(t2,t3,all = TRUE)  #can't join together
-t_diff <- merge(t2,t3,by=c("確定病名","發病年份","縣市","性別","是否為境外移入","年齡層"),all = TRUE)
+t_diff <- merge(t2,t3,by=c("確定病名","縣市","性別","是否為境外移入","年齡層"),all = TRUE)
 
 # names(result_ori.dt)<- names(t.dt)
 # 
