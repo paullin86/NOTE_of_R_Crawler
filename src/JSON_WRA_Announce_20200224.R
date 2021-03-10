@@ -13,3 +13,4 @@ time <- gsub("[^0-9]",replacement="",data_time)
 time <- paste0(substr(time,start=1,stop=4),substr(time,start=5,stop=8))
 # readr::write_csv(result,paste0("./data/MOTC_incident_",time,".csv")) #,row.names = FALSE,fileEncoding = "UTF-8"
 write.csv(result,paste0("./data/WRA_Announce_",time,"_Big5",".csv"),row.names = FALSE)
+
