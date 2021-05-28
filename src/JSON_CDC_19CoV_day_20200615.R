@@ -18,7 +18,9 @@ t.dt[,.(Sum_ALL=sum(確定病例數)),]  # result_ori.dt[,.(Sum_ALL=sum(確定�
 t2 <- t.dt[!result_ori.dt, on = names(t.dt)]
 t3 <- result_ori.dt[!t.dt, on = names(result_ori.dt)]
 # t_diff <- merge(t2,t3,all = TRUE)  #can't join together
-t_diff <- merge(t2,t3,by=c("確定病名","縣市","性別","是否為境外移入","年齡層","個案研判日"),all = TRUE)
+t_diff <- merge(t2,t3,by=c("確定病名","縣市","鄉鎮","性別","是否為境外移入","年齡層","個案研判日"),all = TRUE)
+t_diff[是否為境外移入=='否'&鄉鎮!='其他',.(Sum_ALL=sum(確定病例數.x)),]  # result_ori.dt[,.(Sum_ALL=sum(確定病例數)),]
+t_diff[是否為境外移入=='否'&鄉鎮=='其他',.(Sum_ALL=sum(確定病例數.x)),]  # result_ori.dt[,.(Sum_ALL=sum(確定病例數)),]
 
 # names(result_ori.dt)<- names(t.dt)
 # 
@@ -29,9 +31,13 @@ result <- t
 result$'確定病例數' <- as.integer(result$'確定病例數')
 
 result.dt<-data.table(result)
+
 class(result.dt)
 str(result.dt)
 colnames(result.dt)
+result.dt[是否為境外移入=='否'&鄉鎮!='其他',.(Sum_ALL=sum(確定病例數)),]  # result_ori.dt[,.(Sum_ALL=sum(確定病例數)),]
+result.dt[是否為境外移入=='是',.(Sum_ALL=sum(確定病例數)),]  # result_ori.dt[,.(Sum_ALL=sum(確定病例數)),]
+
 # result.dt[是否為境外移入=='是',.(.N,Sum=sum(確定病例數)),by='縣市']
 # result.dt[,.(Sum=sum(確定病例數)),by=.(縣市,是否為境外移入)][order(縣市,是否為境外移入)]
 X <- result.dt[是否為境外移入=='是',.(Sum_Inter=sum(確定病例數)),by='縣市']
