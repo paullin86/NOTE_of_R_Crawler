@@ -1,5 +1,6 @@
 # JSON https://data.cdc.gov.tw/dataset/agsdctable-day-19cov
-url <- "https://data.cdc.gov.tw/download?resourceid=a59483fd-4b09-42bd-af15-3c123147d7e3&dataurl=https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json"
+# url <- "https://data.cdc.gov.tw/download?resourceid=a59483fd-4b09-42bd-af15-3c123147d7e3&dataurl=https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json"
+url <- "https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json"
 library(jsonlite)
 t <- fromJSON(url)
 library(readr)
