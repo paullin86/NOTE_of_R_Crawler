@@ -42,18 +42,24 @@ result.dt[是否為境外移入=='是',.(Sum_ALL=sum(確定病例數)),]  # resu
 
 # result.dt[是否為境外移入=='是',.(.N,Sum=sum(確定病例數)),by='縣市']
 # result.dt[,.(Sum=sum(確定病例數)),by=.(縣市,是否為境外移入)][order(縣市,是否為境外移入)]
-X <- result.dt[是否為境外移入=='是',.(Sum_Inter=sum(確定病例數)),by='縣市']
-Y <- result.dt[是否為境外移入=='否',.(Sum_Local=sum(確定病例數)),by='縣市']
+X <- result.dt[是否為境外移入=='是',.(Sum_Inter=sum(確定病例數)),by=.(縣市,鄉鎮)]
+Y <- result.dt[是否為境外移入=='否',.(Sum_Local=sum(確定病例數)),by=.(縣市,鄉鎮)]
 result_op.dt <- merge(X,Y,all=TRUE)
+
+Y.diff <- t_diff[是否為境外移入=='否'&確定病例數.x!='NA',.(Sum_Local.x=sum(確定病例數.x)),by=.(縣市,鄉鎮)]
+t_diff[是否為境外移入=='否'&確定病例數.x!='NA',.(Sum_ALL=sum(確定病例數.x)),by=.(縣市)] 
+t_diff[是否為境外移入=='否'&確定病例數.x!='NA',.(Sum_ALL.x=sum(確定病例數.x)),] 
+t_diff[是否為境外移入=='否'&確定病例數.y!='NA',.(Sum_ALL.y=sum(確定病例數.y)),] 
 
 # save result
 # readr::write_csv(result,paste0("./data/MOTC_incident_",time,".csv")) #,row.names = FALSE,fileEncoding = "UTF-8"
 savef <- function(time){
   write.csv(result,paste0("./data/CDC_19CoV_day_",time,"_Big5",".csv"),row.names = FALSE);
   write.csv(result,paste0("./data/CDC_19CoV_day_","temp","_Big5",".csv"),row.names = FALSE);
-  # write.csv(result_op.dt,paste0("./data/CDC_19CoV_County_",time,"_Big5",".csv"),row.names = FALSE);
+  write.csv(result_op.dt,paste0("./data/CDC_19CoV_day_CountyTown_",time,"_Big5",".csv"),row.names = FALSE);
   write.csv(t_diff,paste0("./data/CDC_19CoV_day_diff_",time,"_Big5",".csv"),row.names = FALSE);
-  print(paste0(paste(result_op.dt$縣市, collapse="、"),"等",length(result_op.dt$縣市),"縣市，共",t.dt[,.(Sum_ALL=sum(確定病例數)),],"例。"))
+  write.csv(Y.diff,paste0("./data/CDC_19CoV_day_diff_town_",time,"_Big5",".csv"),row.names = FALSE);
+  print(paste0(paste(unique(result_op.dt$縣市), collapse="、"),"等",length(unique(result_op.dt$縣市)),"縣市，共",t.dt[,.(Sum_ALL=sum(確定病例數)),],"例。"))
 }
 
 if(nrow(t2)>0){
