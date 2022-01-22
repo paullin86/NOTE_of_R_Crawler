@@ -7,8 +7,6 @@ t <- fromJSON(url)
 library(readr)
 result_ori <- read_csv("data/SWCB_UAV_temp_uni.csv", 
                         col_types = cols("Date" = col_character()
-                       #                ,  "發病週別" = col_character(), 
-                       #                  "確定病例數" = col_character()
                         ),locale = locale(encoding = "UTF-8")
                        )# View(result)
 library(data.table)
