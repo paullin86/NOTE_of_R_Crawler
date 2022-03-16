@@ -6,8 +6,8 @@ t <- fromJSON(url)
 library(data.table)
 t.dt <- data.table(t$Data)
 # result
-str(t.dt)
-colnames(t.dt)
+# str(t.dt)
+# colnames(t.dt)
 t.dt$EventName <- t$EventName
 t.dt$EventDateTime <-t$EventDateTime
 t.dt$Magnitude <-t$Magnitude
@@ -19,6 +19,7 @@ result <- t.dt[,.(EventName, EventDateTime,Magnitude,EQ_WGS84_Lon,EQ_WGS84_Lat,D
 data_time <- max(t.dt$EventDateTime, na.rm = TRUE)
  time <- gsub("[^0-9]",replacement="",data_time) 
  time <- paste0(substr(time,start=1,stop=8),"_",substr(time,start=9,stop=12))
+ print((paste0(t$EventName,"，發生時間：",t$EventDateTime,"，規模：",t$Magnitude,"，深度：",t$Depth,"公里，最大震度：",max(t$Data$Intensity),"級(PGA：",max(t$Data$PGA),")")))
 
 # save result
 # readr::write_csv(result,paste0("./data/MOTC_incident_",time,".csv")) #,row.names = FALSE,fileEncoding = "UTF-8"
