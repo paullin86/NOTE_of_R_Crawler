@@ -32,6 +32,7 @@ savef <- function(time){
   # print(paste0(paste(result_op.dt$縣市, collapse="、"),"等",length(result_op.dt$縣市),"縣市，共",t.dt[,.(Sum_ALL=sum(確定病例數)),],"例。"))
 }
 
+
 if(nrow(t.dt)>0){
   savef(time)}else{
     print("not yet updated")}
