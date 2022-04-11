@@ -3,7 +3,7 @@ rm(list=ls())
 url <- "https://sheets.googleapis.com/v4/spreadsheets/1ImBcGTr_Peaj7X2OI2Tydxhm2QFs3JapChDgBLImF3g/values/now?alt=json&key=AIzaSyDWGy_OmiMZgNE81M0_Tba0656P5K8t7E0"
 library(jsonlite)
 
-?fromJSON
+# ?fromJSON
 # t <- fromJSON(url, simplifyVector = FALSE,flatten = TRUE) #,simplifyDataFrame = FALSE  
 t <- fromJSON(url,flatten = TRUE)
 # t$majorDimension
