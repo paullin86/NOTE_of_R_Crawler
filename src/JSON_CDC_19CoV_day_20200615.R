@@ -42,7 +42,7 @@ result.dt[是否為境外移入=='是',.(Sum_ALL=sum(確定病例數)),]  # resu
 
 # result.dt[是否為境外移入=='是',.(.N,Sum=sum(確定病例數)),by='縣市']
 # result.dt[,.(Sum=sum(確定病例數)),by=.(縣市,是否為境外移入)][order(縣市,是否為境外移入)]
-X <- result.dt[是否為境外移入=='是',.(Sum_Inter=sum("確定病例數")),by=.(縣市,鄉鎮)]
+X <- result.dt[是否為境外移入=='是',.(Sum_Inter=sum(確定病例數)),by=.(縣市,鄉鎮)]
 Y <- result.dt[是否為境外移入=='否',.(Sum_Local=sum(確定病例數)),by=.(縣市,鄉鎮)]
 result_op.dt <- merge(X,Y,all=TRUE)
 
