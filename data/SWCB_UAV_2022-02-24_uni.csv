@@ -1,7 +1,5 @@
 Id,CenterLatitude,CenterLongitude,AccessURL,Title,ProjectNo,ProjectName,Date,Class
 03-001LU,23.20855443,121.30517519,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20211016_121305175_023208554_17_000_RSImage_UAV_Ortho/,20211016_正射影像_花蓮縣富里鄉竹田村,110WS036,110年花蓮分局保育治理專案管理規劃,2021-10-16,正射影像
-03-001LT,22.9984143,120.22129815,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20220101_120221298_022998414_16_001_RSImage_UAV_Ortho/,20220101_正射影像_臺南市東區大學里,105000NP,非委辦計畫類,2022-01-01,正射影像
-03-001LS,22.9984143,120.22129815,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20200101_120221298_022998414_16_000_RSImage_UAV_Ortho/,20200101_正射影像_臺南市東區大學里,105000NP,非委辦計畫類,2020-01-01,正射影像
 03-001LQ,24.1438675,120.5986287,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20211022_120598629_024143868_19_000_RSImage_UAV_Ortho/,20211022_正射影像_臺中市南屯區春社里,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-10-22,正射影像
 03-001LP,23.87813153,120.97298652,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20211008_120972987_023878132_19_000_RSImage_UAV_Ortho/,20211008_正射影像_南投縣魚池鄉東光村,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-10-08,正射影像
 03-001LO,24.19942981,120.61817285,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20210625_120618173_024199430_18_000_RSImage_UAV_Ortho/,20210625_正射影像_臺中市西屯區林厝里,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-06-25,正射影像
@@ -20,7 +18,7 @@ Id,CenterLatitude,CenterLongitude,AccessURL,Title,ProjectNo,ProjectName,Date,Cla
 03-001LB,24.19977885,120.61828514,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20210815_120618285_024199779_18_000_RSImage_UAV_Ortho/,20210815_正射影像_臺中市西屯區林厝里,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-08-15,正射影像
 03-001LA,24.29277553,120.7242316,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20210815_120724232_024292776_19_000_RSImage_UAV_Ortho/,20210815_正射影像_臺中市后里區廣福里,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-08-15,正射影像
 03-001L9,23.87782154,120.97336343,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20210815_120973363_023877822_18_000_RSImage_UAV_Ortho/,20210815_正射影像_南投縣魚池鄉東光村,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-08-15,正射影像
-03-001L7,25.13447478,122.25694477,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20220224_122256945_025134475_16_000_RSImage_UAV_Ortho/,20220224_正射影像_基隆市中正區碧砂里,111000NP,非委辦計畫類,2022-02-24,正射影像
+03-001L8,25.14229522,121.77720014,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20220224_121777200_025142295_16_000_RSImage_UAV_Ortho/,20220224_正射影像_基隆市信義區孝忠里,111000NP,非委辦計畫類,2022-02-24,正射影像
 03-001L6,24.52805663,121.98908359,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20211121_121989084_024528057_16_000_RSImage_UAV_Ortho/,NA,110LL032,110年蘭台大規模崩塌潛勢示範區觀測科技整合研究,2021-11-21,正射影像
 03-001L5,23.87816428,120.97305635,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20210625_120973056_023878164_19_000_RSImage_UAV_Ortho/,20210625_正射影像_南投縣魚池鄉東光村,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-06-25,正射影像
 03-001L4,24.29267372,120.72443627,https://storage.geodac.tw/Tile/RSImage/UAV/Ortho/20210625_120724436_024292674_18_000_RSImage_UAV_Ortho/,20210625_正射影像_臺中市后里區廣福里,110WS061,臺灣地區山坡地沉砂設施量體初步探討及圖冊編制,2021-06-25,正射影像
