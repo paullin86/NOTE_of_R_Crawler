@@ -1,3 +1,4 @@
+rm(list=ls())
 # https://dataapi.ncdr.nat.gov.tw/NCDRAPI/Opendata/NCDR/EQ
 url <- "https://dataapi.ncdr.nat.gov.tw/NCDRAPI/Opendata/NCDR/EQ"
 library(jsonlite)
