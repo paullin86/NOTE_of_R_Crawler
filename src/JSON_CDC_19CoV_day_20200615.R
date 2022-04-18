@@ -14,6 +14,7 @@ t.dt <- data.table(t)
 result_ori.dt$'確定病例數' <- as.integer(result_ori.dt$'確定病例數')
 t.dt$'確定病例數' <- as.integer(t.dt$'確定病例數')
 t.dt[,.(Sum_ALL=sum(確定病例數)),]  # result_ori.dt[,.(Sum_ALL=sum(確定病例數)),]
+t.dt["None",是否為境外移入:="否",on="是否為境外移入"] ## 透過邏輯修改
 # -------------
 # str(result_ori.dt);str(t.dt)
 # diff value
