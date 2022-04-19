@@ -31,7 +31,7 @@ t_diff[是否為境外移入=='否'&鄉鎮=='其他',.(Sum_ALL=sum(確定病例�
 time <- Sys.time()
 time <- gsub("[^0-9]",replacement="",time) 
 time <- paste0(substr(time,start=1,stop=4),"-",substr(time,start=5,stop=6),"-",substr(time,start=7,stop=8),"_",substr(time,start=9,stop=12))
-result <- t
+result <- t.dt
 result$'確定病例數' <- as.integer(result$'確定病例數')
 
 result.dt<-data.table(result)
