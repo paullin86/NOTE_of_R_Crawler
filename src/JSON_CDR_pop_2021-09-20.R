@@ -22,4 +22,4 @@ data_time <- max(result$time)
 time <- gsub("[^0-9]",replacement="",data_time) 
 time <- paste0(substr(time,start=1,stop=8),"_",substr(time,start=9,stop=12))
 # readr::write_csv(result,paste0("./data/MOTC_incident_",time,".csv")) #,row.names = FALSE,fileEncoding = "UTF-8"
-write.csv(result,paste0("./data/CDR_pop_",time,"_Big5",".csv"),row.names = FALSE)
+write.csv(result,paste0("./pop/CDR_pop_",time,"_Big5",".csv"),row.names = FALSE)
